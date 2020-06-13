@@ -111,7 +111,6 @@ $(document).ready(function(){
 
     //Функция открытия loader`a
     const openLoader = () => {
-        console.log('openLo');
         loader.classList.remove('invisible');
         setTimeout(() => {
             loader.classList.add('op1');
@@ -120,7 +119,6 @@ $(document).ready(function(){
 
     //Функция закрытия loader
     const closeLoader = () => {
-        console.log('cloLo');
         loader.classList.remove('op1');
         setTimeout(() => {
             loader.classList.add('invisible');
