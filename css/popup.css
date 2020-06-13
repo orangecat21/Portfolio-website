@@ -1,0 +1,300 @@
+.invisible {
+    display: none;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: #000000;
+    opacity: 0;
+    z-index: 999;
+
+    transition: 0.5s;
+
+    cursor: pointer;
+}
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transition: 0.5s;
+
+    opacity: 0;
+
+    z-index: 1005;
+
+    background: url('../svg/preloader.svg') center 40% no-repeat;
+    background-color: #000000a4;
+}
+
+.popup {
+    position: fixed;
+    top: 100px;
+    left: calc(50vw - 30vw);
+
+    width: 60vw;
+    height: 70vh;
+
+    z-index: 1005;
+
+    background: #fff;
+    opacity: 0;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.op1{
+    opacity: 1;
+}
+
+.op08{
+    opacity: 0.8;
+}
+
+.popup__title {
+    font-size: 45px;
+    font-weight: 700;
+
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    justify-content: space-between;
+    height: 44vh;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.popup__label {
+    font-size: 25px;
+
+    color: #8993ad;
+}
+
+.popup__input {
+    width: 100%;
+    height: 50px;
+
+    font-size: 18px;
+    padding-left: 10px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid #8993ad;
+    border-radius: 2px;
+}
+
+.popup__submit {
+    align-self: center;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.popup__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.popup__cross,
+.popup__cross::before {
+    display: block;
+    content: "";
+    width: 35px;
+    height: 2px;
+
+    background: #8993ad;
+
+    transform-origin: center center;
+    transform: rotate(45deg);
+}
+
+.popup__cross::before {
+    transform: rotate(-90deg);
+}
+
+.popup__close-btn:hover > .popup__cross {
+    box-shadow: 0 0 20px 1px #000000;
+}
+.popup__close-btn:hover > .popup__cross::before {
+    box-shadow: 0 0 20px 1px #000000;
+}
+
+.popup__close-btn:focus > .popup__cross {
+    box-shadow: 0 0 10px 2px #ff2d5e;
+}
+.popup__close-btn:focus > .popup__cross::before {
+    box-shadow: 0 0 10px 2px #ff2d5e;
+}
+
+.popup__close-btn:active > .popup__cross {
+    background: #ff2d5e;
+    box-shadow: none;
+}
+.popup__close-btn:active > .popup__cross::before {
+    background: #ff2d5e;
+    box-shadow: none;
+}
+
+.popup__error {
+    color: red;
+
+    margin-top: -30px;
+    margin-bottom: 11px;
+}
+
+.success {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.success__check-mark {
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+.success__check-dash,
+.success__check-dash::before{
+    content: '';
+    display: block;
+
+    width: 4px;
+    height: 50px;
+
+    background: #2ea842;
+
+    border-radius: 3px;
+
+    transform: rotate(-40deg);
+
+    transform-origin: left bottom;
+}
+
+.success__check-dash::before {
+    transform: rotate(80deg) scaleY(1.7) translate(0px, 1px);
+
+    transform-origin: center bottom;
+}
+
+.success__title {
+    font-size: 30px;
+}
+
+@media (max-width: 1200px) {
+    .popup {
+        width: 80vw;
+
+        left: calc(50vw - 40vw);
+    }
+
+    .popup__title {
+        font-size: 35px;
+
+        margin-bottom: 20px;
+    }
+
+    .popup__label {
+        font-size: 18px;
+    }
+
+    .popup__input {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 750px) {
+    .popup__title {
+        font-size: 25px;
+    }
+
+    .popup__error {
+        font-size: 13px;
+    }
+
+    .popup__label {
+        font-size: 15px;
+    }
+
+    .popup__input{
+        font-size: 13px;
+    }
+
+    .popup__close-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .popup__cross,
+    .popup__cross::before {
+        width: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .popup {
+        height: 60vh;
+    }
+    .popup__title {
+        font-size: 20px;
+
+        margin-top: 40px;
+        margin-bottom: 45px;
+    }
+
+    .popup__form {
+        width: 85%;
+        height: 35vh;
+    }
+
+    .popup__input {
+        width: 95%;
+    }
+
+    .loader {
+        background-position: center 30%;
+    }
+}

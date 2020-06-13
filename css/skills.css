@@ -1,0 +1,127 @@
+.skills {
+    text-align: center;
+
+    padding-bottom: 104px;
+}
+
+.section__title {
+    font-size: 54px;
+    font-weight: 700;
+
+    padding-top: 90px;
+}
+
+.skills__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 93px;
+}
+
+.skill{
+    padding-top: 177px;
+    display: flex;
+    flex:0 1;
+
+    background-position: center 87px;
+    background-repeat: no-repeat;
+}
+
+.skills__item_1 {
+    flex-basis: 257px;
+
+    background-image: url('../img/tools-and-utensils.png');
+}
+
+.skills__item_2 {
+    flex-basis: 277px;
+
+    background-image: url('../img/responsive.png');
+}
+
+.skills__item_3 {
+    flex-basis: 216px;
+
+    background-image: url('../img/programming.png');
+}
+
+.skills__item_4 {
+    flex-basis: 247px;
+
+    background-image: url('../img/coding.png');
+}
+
+.skill__title {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #8993ad;
+
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .skills {
+        padding-bottom: 105px;
+    }
+
+    .skills__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin-top: 5px;
+        margin-bottom: 94px;
+    }
+
+    .skill {
+        padding-top: 170px;
+
+        background-position: center 80px;
+
+        flex-basis: 35%;
+    }
+
+    .skill:nth-of-type(2n-1){
+        margin-right: 30px;
+    }
+
+    .skill:nth-of-type(2n) {
+        margin-left: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .skills {
+        padding-bottom: 51px;
+    }
+
+    .section__title {
+        font-size: 30px;
+
+        padding-top: 33px;
+    }
+
+    .skills__wrapper {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 28px;
+        margin-bottom: 10px;
+    }
+
+    .skill {
+        padding-top: 83px;
+
+        max-width: 250px;
+
+        background-position: center 13px;
+        background-size: auto 55px;
+    }
+
+    .skill:nth-of-type(2n-1), .skill:nth-of-type(2n) {
+        margin: 0 0 41px 0;
+    }
+
+    .skill__title {
+        font-size: 16px;
+    }
+}

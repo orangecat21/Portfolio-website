@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <title>Дмитрий Алеексеев</title>
+</head>
+
+<body>
+    <header class="header">
+      <div class="center-wrapper">
+        <div class="fake-navbar"></div>
+        <div class="upper-header">
+          <input class="header__menu-toggle" id="menu-toggle" type="checkbox">
+          <label class="header__menu-btn menu-btn" for="menu-toggle">
+            <span class="menu-btn__dash"></span>
+          </label>
+
+          <nav class="header__navigation">
+            <ul class="menu">
+              <li><a class="menu__item" href="#skills">Услуги</a></li>
+              <li><a class="menu__item" href="#examples">Портфолио</a></li>
+              <li><a class="menu__item" href="#comercial">Стоимость</a></li>
+            </ul>
+          </nav>
+
+          <div class="contacts-wrapper">
+            <a class="header__phone" href="tel:+74999955577">+7 (499) 995-55-77</a>
+    
+            <button class="header__order-btn order-btn" name="orderCall" id="header__order-call-btn">Заказать звонок</button>
+          </div>
+        </div>
+
+        <div class="lower-header">
+          <article class="title">
+            <h1 class="title__name">Дмитрий Алексеев</h1>
+            <h2 class="title__description">Frontend-разработчик и веб-верстальщик</h2>
+            <button class="title__btn secondary-btn order-btn">Узнать больше</button>
+
+            <div class="title__fly title__fly-item-1"></div>
+            <div class="title__fly title__fly-item-2"></div>
+            <div class="title__fly title__fly-item-3"></div>
+            <div class="title__fly title__fly-item-4"></div>
+            <div class="title__fly title__fly-item-5"></div>
+            <div class="title__fly title__fly-item-6"></div>
+
+          </article>
+
+          <picture class="title-img title-img_mobile">
+            <source srcset="./img/mobile-person.png" media="(max-width: 450px)">
+            <source srcset="./img/person.png">
+            <img src="./img/person.png" alt="Дмитрий Алексеев">
+          </picture>
+
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="skills center-wrapper" id="skills">
+
+        <h3 class="section__title">Что я делаю</h3>
+
+        <div class="skills__wrapper">
+          <div class="skill skills__item_1">
+            <p class="skill__title">Вёрстка лендинг–страниц и&nbsp;сайтов любой сложности</p>
+          </div>
+
+          <div class="skill skills__item_2">
+            <p class="skill__title">Адаптивная вёрстка под&nbsp;все браузеры и устройства</p>
+          </div>
+
+          <div class="skill skills__item_3">
+            <p class="skill__title">Frontend–разработка и программирование</p>
+          </div>
+
+          <div class="skill skills__item_4">
+            <p class="skill__title">Исправление и доработка существующей вёрстки</p>
+          </div>
+        </div>
+
+        <button class="secondary-btn skills__btn order-btn">Узнать стоимость</button>
+
+      </section>
+
+      <section class="examples" id="examples">
+        <div class="center-wrapper">
+          <h3 class="section__title">Примеры моих работ</h3>
+
+          <div class="examples__wrapper">
+
+            <div class="example example__item_1">
+              <figure class="item__wrapper">
+                <img class="example__img" src="./img/example1.jpg" alt="Пример 1">
+                <figcaption class="example__caption">Сайт психолога Веры Антоновой</figcaption>
+              </figure>
+            </div>
+
+            <div class="example example__item_2">
+              <figure class="item__wrapper">
+                <img class="example__img" src="./img/example2.jpg" alt="Пример 2">
+                <figcaption class="example__caption">Сайт магазина детской одежды</figcaption>
+              </figure>
+            </div>
+
+            <div class="example example__item_3">
+              <figure class="item__wrapper">
+                <img class="example__img" src="./img/example3.jpg" alt="Пример 3">
+                <figcaption class="example__caption">Сайт магазина рыболов</figcaption>
+              </figure>
+            </div>
+
+            <div class="example example__item_2">
+              <figure class="item__wrapper">
+                <img class="example__img" src="./img/example2.jpg" alt="Пример 2">
+                <figcaption class="example__caption">Сайт психолога Веры Антоновой</figcaption>
+              </figure>
+            </div>
+
+            <div class="example example__item_3">
+              <figure class="item__wrapper">
+                <img class="example__img" src="./img/example3.jpg" alt="Пример 3">
+                <figcaption class="example__caption">Сайт психолога Веры Антоновой</figcaption>
+              </figure>
+            </div>
+
+          </div>
+
+          <button class="secondary-btn examples__btn order-btn">Заказать проект</button>
+
+        </div>
+      </section>
+
+      <section class="commercial" id="comercial">
+
+        <div class="center-wrapper">
+
+          <h3 class="commercial__title">Адаптивная вёрстка под все устройства и&nbsp;браузеры&nbsp;от 1000 рублей всего за&nbsp;4&nbsp;часа.<sup class="star-1">*</sup></h3>
+          <p class="commercial__text">
+            <sup class="star-2">*</sup> Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в&nbsp;зависимости от&nbsp;сложности&nbsp;задач.
+          </p>
+          <div class="commercial__flies">
+            <span class="commercial__fly commercial__fly-1">{&nbsp;}</span>
+            <span class="commercial__fly commercial__fly-2">#</span>
+            <span class="commercial__fly commercial__fly-3">&lt;div&gt;</span>
+            <span class="commercial__fly commercial__fly-4">&lt;/&gt;</span>
+            <span class="commercial__fly commercial__fly-5">{&nbsp;}</span>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      
+      <div class="center-wrapper">
+
+        <div class="footer__wrapper">
+
+          <nav>
+            <ul class="footer__menu list_lsn">
+              <li><a class="footer__menu-item" href="#skills">Услуги</a></li>
+              <li><a class="footer__menu-item" href="#examples">Портфолио</a></li>
+              <li><a class="footer__menu-item" href="#comercial">Стоимость</a></li>
+            </ul>
+          </nav>
+
+          <address>
+            <ul class="footer__feedback list_lsn">
+              <li><a href="tel:+74999957755" class="feedback__link feedback__phone">
+                +7 (499) 995-77-55
+              </a></li>
+              <li><a href="mailto:dmitry@alekseev.com" class="feedback__link feedback__mail">
+                dmitry@alekseev.com
+              </a></li>
+            </ul>
+          </address>
+
+          <div class="footer__social-block">
+
+            <button class="footer__order-btn order-btn" name="orderCall" id="footer__order-call-btn">Заказать звонок</button>
+
+            <address>
+              <ul class="footer__social list_lsn">
+                <li>
+                  <a class="footer__social-item social-item_vk" href="https://vk.com/"></a>
+                </li>
+                <li>
+                  <a class="footer__social-item social-item_fb" href="https://www.facebook.com/"></a>
+                </li>  
+                <li>
+                  <a class="footer__social-item social-item_tw" href="https://twitter.com/"></a>
+                </li>
+                <li>
+                  <a class="footer__social-item social-item_inst" href="https://www.instagram.com/"></a>
+                </li>
+              </ul>
+            </address>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        <small>&copy; Дмитрий Алеексеев, 2016 - 2018</small>
+      </div>
+
+    </footer>
+
+    <section class="popup invisible">
+      <button class="popup__close-btn">
+        <span class="popup__cross"></span>
+      </button>
+      <h3 class="popup__title">Заказать обратный звонок</h3>
+      <form class="popup__form" action="https://echo.htmlacademy.ru/" method="post" name="orderCall">
+        <label class="popup__label" for="name">Ваше имя</label>
+        <input class="popup__input" id="name" type="text" name="name" placeholder="Введите имя" required>
+
+        <label class="popup__label" for="phone">Номер телефона для обратной связи</label>
+        <input class="popup__input" id="phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+        <input class="popup__submit secondary-btn" type="submit" name="btn" value="Отправить заявку">
+      </form>
+    </section>
+
+    <div class="overlay invisible"></div>
+    <div class="loader invisible"></div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+.commercial {
+    padding-top: 77px;
+    padding-bottom: 81px;
+
+    background: linear-gradient(-160deg, #ff3294 40%, #ff8f5a 75%);
+
+    color: white;
+}
+
+.commercial__title {
+    padding-left: 113px;
+
+    font-size: 45px;
+    line-height: 49px;
+    font-weight: 700;
+}
+
+.commercial__text {
+    padding-left: 127px;
+    padding-right: 200px;
+    margin-top: 29px;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: -12px;
+}
+
+.commercial .star-1 {
+    position: relative;
+    bottom: -11px;
+}
+
+.commercial .star-2 {
+    position: relative;
+    bottom: -4px;
+}
+
+.commercial__flies {
+    position: absolute;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.commercial__fly-1 {
+    position: absolute;
+    font-size: 45px;
+    transform: translate(-12.7vw, -225px) rotate(29deg);
+}
+
+.commercial__fly-2 {
+    position: absolute;
+    font-size: 52px;
+    transform: translate(-6.6vw, -37px) rotate(21deg);
+}
+
+.commercial__fly-3 {
+    position: absolute;
+    font-size: 39px;
+    transform: translate(54.43vw, 13px) rotate(21deg);
+}
+
+.commercial__fly-4 {
+    position: absolute;
+    font-size: 39px;
+    transform: translate(calc(1200px + 4.27vw), -11.04vw) rotate(-20deg);
+}
+
+.commercial__fly-5 {
+    position: absolute;
+    font-size: 46px;
+    transform: translate(72.5vw, -28px) rotate(-20deg);
+}
+
+@media (max-width: 1024px) {
+    .commercial__title {
+        padding-left: 0px;
+    }
+
+    .commercial__text {
+        padding-left: 13px;
+        padding-right: 180px;
+        margin-top: 29px;
+    
+        font-size: 18px;
+        line-height: 30px;
+        text-indent: -11px;
+    }
+
+    .commercial__fly-1 {
+        font-size: 32px;
+        transform: translate(117px, calc(51.17vw - 790px)) rotate(29deg);
+    }
+
+    .commercial__fly-3 {
+        font-size: 25px;
+        transform: translate(472px, 19px) rotate(21deg);
+    }
+
+    .commercial__fly-4 {
+        font-size: 40px;
+        transform: translate(834px, -1px) rotate(-20deg);
+    }
+
+    .commercial__fly-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .commercial {
+        padding-top: 41px;
+        padding-bottom: 42px;
+    }
+
+    .commercial__title {
+        position: relative;
+    }
+
+    .commercial .star-1 {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .commercial .star-2 {
+        font-size: 20px;
+    }
+
+    .commercial__title {
+        font-size: 28px;
+
+        line-height: 40px;
+    }
+
+    .commercial__text {
+        font-size: 15px;
+
+        margin-top: 25px;
+
+        padding-right: 0;
+        padding-left: 12px;
+    }
+
+    .commercial__fly-2 {
+        display: none;
+    }
+
+    .commercial__fly-1 {
+        display: none;
+    }
+
+}
