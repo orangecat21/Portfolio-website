@@ -301,3 +301,7 @@
         display: none;
     }
 }
+
+.title__fly_initial {
+    transform: none;
+}
