@@ -47,9 +47,6 @@
     margin-left: 32px;
     padding-left: 38px;
 
-    display: block;
-    font-size: 25px;
-    color: #000;
 
     background: url("../svg/phone.svg") left center no-repeat;
     background-size: 19px auto;
@@ -59,9 +56,6 @@
     margin-left: 34px;
     padding-left: 42px;
 
-    display: block;
-    font-size: 25px;
-    color: #000;
 
     background: url("../svg/mail.svg") left 10px no-repeat;
     background-size: 19px auto;
@@ -69,6 +63,9 @@
 
 .feedback__link {
     font-style: normal;
+    font-size: 25px;
+    color: #000000;
+    display: block;
 }
 
 .feedback__link:focus {
@@ -241,6 +238,17 @@
 
     .copyright small {
         font-size: 16px;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 800px) {
+    .footer__order-btn{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .feedback__link {
+        font-size: 23px;
     }
 }
 
