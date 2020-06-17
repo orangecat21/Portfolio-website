@@ -42,6 +42,25 @@ $(document).ready(function(){
         }
     });
 
+    //Разлет тегов
+    const titleFlies = document.querySelectorAll('.title__fly');
+    for (const fly of titleFlies){
+        fly.classList.remove('title__fly_initial')
+    }
+
+    //Плавный скролл
+    const links = document.querySelectorAll('.smooth-scroll')
+    for (const link of links) {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const destination = link.getAttribute('href');
+            document.querySelector(destination).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+
 
     //Настройка отключения скролла
     const keys = {
