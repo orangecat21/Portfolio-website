@@ -39,11 +39,11 @@
 
 .popup {
     position: fixed;
-    top: 100px;
+    top: 5vh;
     left: calc(50vw - 30vw);
 
     width: 60vw;
-    height: 70vh;
+    max-height: 90vh;
 
     z-index: 1005;
 
@@ -53,6 +53,8 @@
     border-radius: 10px;
 
     text-align: center;
+
+    overflow: scroll;
 
     transition: 0.5s;
 }
@@ -69,25 +71,23 @@
     font-size: 45px;
     font-weight: 700;
 
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
 }
 
 .popup__form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    justify-content: space-between;
-    height: 44vh;
     width: 65%;
-    margin: 0 auto;
+    margin: 0 auto 3vh;
 }
 
 .popup__label {
     font-size: 25px;
-
     color: #8993ad;
+
+    margin-bottom: 1vh;
 }
 
 .popup__input {
@@ -102,6 +102,18 @@
 
     border: 1px solid #8993ad;
     border-radius: 2px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 2vh;
+}
+
+.popup__input_area {
+    height: 100px;
+
+    padding-top: 5px;
+
+    resize: none;
 }
 
 .popup__submit {
@@ -178,12 +190,13 @@
 
 .success {
     width: 100%;
-    height: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    margin: 20vh 0;
 }
 
 .success__check-mark {
@@ -234,11 +247,12 @@
     .popup__title {
         font-size: 35px;
 
-        margin-bottom: 20px;
+        margin-bottom: 2vh;
     }
 
     .popup__label {
         font-size: 18px;
+
     }
 
     .popup__input {
@@ -257,6 +271,8 @@
 
     .popup__label {
         font-size: 15px;
+
+        margin-bottom: .9vh;
     }
 
     .popup__input{
@@ -276,22 +292,24 @@
 
 @media (max-width: 450px) {
     .popup {
-        height: 60vh;
+        max-height: 95vh;
     }
+
     .popup__title {
         font-size: 20px;
-
-        margin-top: 40px;
-        margin-bottom: 45px;
     }
 
     .popup__form {
         width: 85%;
-        height: 35vh;
     }
 
     .popup__input {
-        width: 95%;
+        width: 100%;
+        height: 40px;
+    }
+
+    .popup__input_area {
+        height: 80px;
     }
 
     .loader {
