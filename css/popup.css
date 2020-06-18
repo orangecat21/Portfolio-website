@@ -59,6 +59,10 @@
     transition: 0.5s;
 }
 
+.popup_short {
+    top: 10vh;
+}
+
 .op1{
     opacity: 1;
 }
