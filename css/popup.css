@@ -54,8 +54,6 @@
 
     text-align: center;
 
-    overflow: scroll;
-
     transition: 0.5s;
 }
 
@@ -112,6 +110,8 @@
     margin-bottom: 3vh;
 
     transition: .2s;
+
+    outline: none;
 }
 
 .popup__input:focus {
@@ -150,6 +150,8 @@
     justify-content: center;
 
     cursor: pointer;
+
+    outline: none;
 }
 
 .popup__cross,
