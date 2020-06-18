@@ -99,7 +99,7 @@
     height: 50px;
 
     font-size: 18px;
-    padding-left: 10px;
+    padding: 0 10px;
 
     appearance: none;
     -webkit-appearance: none;
@@ -121,7 +121,8 @@
 .popup__input_area {
     height: 100px;
 
-    padding-top: 5px;
+    padding: 5px 10px;
+
 
     resize: none;
 }

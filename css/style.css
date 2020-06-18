@@ -50,7 +50,8 @@ button::-moz-focus-inner {
     border: none;
 
     width: 270px;
-    height: 60px;
+
+    padding: 20px 20px;
 
     cursor: pointer;
 
@@ -100,7 +101,7 @@ button::-moz-focus-inner {
 
     .secondary-btn {
         width: 320px;
-        height: 68px;
+        padding: 24px 20px;
     }
 }
 
@@ -127,7 +128,7 @@ button::-moz-focus-inner {
 
     .secondary-btn {
         width: 100%;
-        height: 55px;
+        padding: 18px 20px;
 
         font-size: 16px;
     }
