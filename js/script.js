@@ -164,8 +164,9 @@ $(document).ready(function(){
 
     const closeBtns = document.querySelectorAll('.popup__close-btn');
     for (const btn of closeBtns) {
-        btn.addEventListener('click', (e) => {
-            closePopup(e.target.parentNode);
+        btn.addEventListener('click', () => {
+            closePopup(popupShort);
+            closePopup(popupLong);
         });
         overlay.addEventListener('click', () => {
             closePopup(popupShort);

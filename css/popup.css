@@ -59,6 +59,10 @@
     transition: 0.5s;
 }
 
+.popup_short {
+    top: 10vh;
+}
+
 .op1{
     opacity: 1;
 }
@@ -105,7 +109,13 @@
 
     box-sizing: border-box;
 
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
+
+    transition: .2s;
+}
+
+.popup__input:focus {
+    box-shadow: 0 0 10px 1px #ff2d5e;
 }
 
 .popup__input_area {
