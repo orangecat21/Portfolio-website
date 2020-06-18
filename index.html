@@ -53,7 +53,7 @@
           <article class="title">
             <h1 class="title__name">Дмитрий Алексеев</h1>
             <h2 class="title__description">Frontend-разработчик и веб-верстальщик</h2>
-            <button class="title__btn secondary-btn order-btn">Узнать больше</button>
+            <button class="title__btn secondary-btn order-btn" name="orderAdvice">Узнать больше</button>
 
             <div class="title__fly title__fly-item-1 title__fly_initial"></div>
             <div class="title__fly title__fly-item-2 title__fly_initial"></div>
@@ -97,7 +97,7 @@
           </div>
         </div>
 
-        <button class="secondary-btn skills__btn order-btn">Узнать стоимость</button>
+        <button class="secondary-btn skills__btn order-btn" name="orderAdvice">Узнать стоимость</button>
 
       </section>
 
@@ -144,7 +144,7 @@
 
           </div>
 
-          <button class="secondary-btn examples__btn order-btn">Заказать проект</button>
+          <button class="secondary-btn examples__btn order-btn" name="orderAdvice">Заказать проект</button>
 
         </div>
       </section>
@@ -229,7 +229,7 @@
 
     </footer>
 
-    <section class="popup invisible">
+    <section id="popup_short" class="popup popup_short invisible">
       <button class="popup__close-btn">
         <span class="popup__cross"></span>
       </button>
@@ -240,6 +240,28 @@
 
         <label class="popup__label" for="phone">Номер телефона для обратной связи</label>
         <input class="popup__input" id="phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+        <input class="popup__submit secondary-btn" type="submit" name="btn" value="Отправить заявку">
+      </form>
+    </section>
+
+    <section id="popup_long" class="popup popup_long invisible">
+      <button class="popup__close-btn">
+        <span class="popup__cross"></span>
+      </button>
+      <h3 class="popup__title">Заказать консультацию</h3>
+      <form class="popup__form" action="https://echo.htmlacademy.ru/" method="post" name="orderAdvice">
+        <label class="popup__label" for="Name">Ваше имя</label>
+        <input class="popup__input" id="Name" type="text" name="name" placeholder="Введите имя" required>
+
+        <label class="popup__label" for="Phone">Номер телефона</label>
+        <input class="popup__input" id="Phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+        <label class="popup__label" for="Email">Адрес электронной почты</label>
+        <input class="popup__input" type="Email" name="email" id="Email" placeholder="example@mail.ru">
+
+        <label class="popup__label" for="Message">Комментарий</label>
+        <textarea class="popup__input popup__input_area" name="message" id="Message" cols="30" rows="10" placeholder="Ваше сообщение" ></textarea>
 
         <input class="popup__submit secondary-btn" type="submit" name="btn" value="Отправить заявку">
       </form>

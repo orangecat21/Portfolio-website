@@ -18,29 +18,31 @@ $(document).ready(function(){
     });
 
     //Настройка маски ввода номера телефона
-    const phoneInput = document.querySelector('#phone');
-    phoneInput.addEventListener('keydown', function(event){
-        if( !(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { 
-            event.preventDefault();
-        }
-        const mask = '+7 (111) 111-11-11';
-
-        let currentString = this.value;
-        let currentLength = currentString.length;
-        if (/[0-9]/.test(event.key)) {
-            if (mask[currentLength] == '1') {
-                this.value = currentString + event.key;
-            } else {
-                for (var i=currentLength; i<mask.length; i++) {
-                if (mask[i] == '1') {
+    const phoneInputs = [document.querySelector('#phone'), document.querySelector('#Phone')];
+    for (const phoneInput of phoneInputs){
+        phoneInput.addEventListener('keydown', function(event){
+            if( !(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { 
+                event.preventDefault();
+            }
+            const mask = '+7 (111) 111-11-11';
+    
+            let currentString = this.value;
+            let currentLength = currentString.length;
+            if (/[0-9]/.test(event.key)) {
+                if (mask[currentLength] == '1') {
                     this.value = currentString + event.key;
-                    break;
-                }
-                currentString += mask[i];
+                } else {
+                    for (var i=currentLength; i<mask.length; i++) {
+                    if (mask[i] == '1') {
+                        this.value = currentString + event.key;
+                        break;
+                    }
+                    currentString += mask[i];
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 
     //Разлет тегов
     const titleFlies = document.querySelectorAll('.title__fly');
@@ -102,11 +104,12 @@ $(document).ready(function(){
 
 
     //Функция открывающая popup
-    const popup = document.querySelector('.popup');
+    const popupShort = document.querySelector('.popup_short');
+    const popupLong = document.querySelector('.popup_long');
     const overlay = document.querySelector('.overlay');
     const loader = document.querySelector('.loader');
 
-    const openPopup = () => {
+    const openPopup = (popup) => {
         disableScroll();
         popup.classList.remove('invisible');
         overlay.classList.remove('invisible');
@@ -118,7 +121,7 @@ $(document).ready(function(){
     }
 
     //Функция, закрывающая popup
-    const closePopup = () => {
+    const closePopup = (popup) => {
         enableScroll();
         popup.classList.remove('op1');
         overlay.classList.remove('op08');
@@ -148,57 +151,97 @@ $(document).ready(function(){
     //Обработка кликов на кнопки
     const orderBtn = document.querySelectorAll('.order-btn');
     for (const btn of orderBtn) {
-        btn.addEventListener('click', openPopup);
+        if (btn.name == 'orderCall'){
+            btn.addEventListener('click', () => {
+                openPopup(popupShort);
+            });
+        } else {
+            btn.addEventListener('click', () => {
+                openPopup(popupLong);
+            })
+        }
     }
 
-    const closeBtn = document.querySelector('.popup__close-btn');
-    closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', closePopup);
+    const closeBtns = document.querySelectorAll('.popup__close-btn');
+    for (const btn of closeBtns) {
+        btn.addEventListener('click', (e) => {
+            closePopup(e.target.parentNode);
+        });
+        overlay.addEventListener('click', () => {
+            closePopup(popupShort);
+            closePopup(popupLong);
+        });
+    }
 
     //Обработка события submit
-    const form = document.orderCall;
-    form.addEventListener('submit', (e) => {
+    const formShort = document.orderCall;
+    formShort.addEventListener('submit', (e) => {
         e.preventDefault();
-        form.phone.classList.remove('red-border');
-        const phone = form.phone.value;
+        formShort.phone.classList.remove('red-border');
+        const phone = formShort.phone.value;
         if (phone.length < 18) {
-            form.phone.classList.add('red-border');
+            formShort.phone.classList.add('red-border');
             return false;
         }
         openLoader();
-        const formData = new FormData(form);
-        fetch(form.action, { method: 'POST', body: formData })
+        const formData = new FormData(formShort);
+        fetch(formShort.action, { method: 'POST', body: formData })
             .then(response => {
                 closeLoader();
                 if (response.status == 200) {
-                    sendSuccesed();
+                    sendSuccesed(popupShort);
                 } else {
-                    sendFailed(response.statusText);
+                    sendFailed(response.statusText, popupShort);
                 }
             })
             .catch(error => {
-                sendFailed(error);
+                sendFailed(error, popupShort);
+            });
+    });
+
+    const formLong = document.orderAdvice;
+    formLong.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formLong.phone.classList.remove('red-border');
+        const phone = formLong.phone.value;
+        if (phone.length < 18) {
+            formLong.phone.classList.add('red-border');
+            return false;
+        }
+        openLoader();
+        const formData = new FormData(formLong);
+        fetch(formLong.action, { method: 'POST', body: formData })
+            .then(response => {
+                closeLoader();
+                if (response.status == 200) {
+                    sendSuccesed(popupLong);
+                } else {
+                    sendFailed(response.statusText, popupLong);
+                }
+            })
+            .catch(error => {
+                sendFailed(error, popupLong);
             });
     });
 
     //Обработка успешной отправки
-    const sendSuccesed = () => {
+    const sendSuccesed = (popup) => {
         popup.innerHTML = `<div class="success">
                                 <div class="success__check-mark">
                                 <span class="success__check-dash"></span>
                                 </div>
                                 <h3 class="success__title">Заявка успешно отправлена</h3>
                             </div>`;
-        setTimeout(closePopup, 2000);
+        setTimeout(closePopup, 2000, popup);
     }
 
 
     //Обработка ошибки отправки
-    const sendFailed = (error) => {
-        const popupTitle = document.querySelector('.popup__title');
+    const sendFailed = (error, popup) => {
+        const popupTitle = popup.querySelector('.popup__title');
         popupTitle.insertAdjacentHTML('afterend', `<p class="popup__error">Ой, кажется что-то пошло не так, попробуйте ещё раз</p>`);
         console.error(error);
-        const errorMessage = document.querySelector('.popup__error');
+        const errorMessage = popup.querySelector('.popup__error');
         setTimeout(() => {
             errorMessage.remove();
         },2000)
