@@ -55,6 +55,8 @@
     text-align: center;
 
     transition: 0.5s;
+
+    overflow: hidden;
 }
 
 .popup_short {
@@ -115,7 +117,7 @@
 }
 
 .popup__input:focus {
-    box-shadow: 0 0 10px 1px #ff2d5e;
+    box-shadow: 0 0 6px 3px #ff2d5e;
 }
 
 .popup__input_area {
