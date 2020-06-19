@@ -83,7 +83,7 @@ button::-moz-focus-inner {
 }
 
 .red-border {
-    box-shadow: 0 0 2px 1px rgb(252, 119, 119);
+    box-shadow: 0 0 2px 1px #ff1717;
 }
 
 @media (min-width: 1025px) {

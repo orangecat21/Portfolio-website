@@ -1,22 +1,5 @@
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', () => {
     
-    //Инициализация слайдера
-    $('.examples__wrapper').slick({
-        infinite: true,
-        variableWidth: true,
-        nextArrow: '<button type="button" class="slick-next"><div class="arrow arrow-next"></div></button>',
-        prevArrow: '<button type="button" class="slick-prev"><div class="arrow arrow-prev"></div></button>',
-
-        responsive: [{
-            breakpoint: 1025,
-            settings: {
-                slidesToShow: 2,
-                arrows: false,
-                dots: true
-            }
-        }]
-    });
-
     //Настройка маски ввода номера телефона
     const phoneInputs = [document.querySelector('#phone'), document.querySelector('#Phone')];
     for (const phoneInput of phoneInputs){
@@ -42,12 +25,6 @@ $(document).ready(function(){
                 }
             }
         });
-    }
-
-    //Разлет тегов
-    const titleFlies = document.querySelectorAll('.title__fly');
-    for (const fly of titleFlies){
-        fly.classList.remove('title__fly_initial')
     }
 
     //Плавный скролл
@@ -144,7 +121,7 @@ $(document).ready(function(){
         loader.classList.remove('op1');
         setTimeout(() => {
             loader.classList.add('invisible');
-        }, 500);
+        }, 200);
     }
 
 
@@ -174,56 +151,38 @@ $(document).ready(function(){
         });
     }
 
-    //Обработка события submit
-    const formShort = document.orderCall;
-    formShort.addEventListener('submit', (e) => {
-        e.preventDefault();
-        formShort.phone.classList.remove('red-border');
-        const phone = formShort.phone.value;
-        if (phone.length < 18) {
-            formShort.phone.classList.add('red-border');
-            return false;
-        }
-        openLoader();
-        const formData = new FormData(formShort);
-        fetch(formShort.action, { method: 'POST', body: formData })
-            .then(response => {
-                closeLoader();
-                if (response.status == 200) {
-                    sendSuccesed(popupShort);
-                } else {
-                    sendFailed(response.statusText, popupShort);
-                }
-            })
-            .catch(error => {
-                sendFailed(error, popupShort);
-            });
-    });
+    //Обработчик события submit
+    const submitHandler = (form, popup) => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.phone.classList.remove('red-border');
+            const phone = form.phone.value;
+            if (phone.length < 18) {
+                form.phone.classList.add('red-border');
+                return false;
+            }
+            openLoader();
+            const formData = new FormData(form);
+            fetch(form.action, { method: 'POST', body: formData })
+                .then(response => {
+                    closeLoader();
+                    if (response.status == 200) {
+                        sendSuccesed(popup);
+                    } else {
+                        sendFailed(response.statusText, popup);
+                    }
+                })
+                .catch(error => {
+                    sendFailed(error, popup);
+                });
+        });
+    }
 
+    //Обработка submit
+    const formShort = document.orderCall;
     const formLong = document.orderAdvice;
-    formLong.addEventListener('submit', (e) => {
-        e.preventDefault();
-        formLong.phone.classList.remove('red-border');
-        const phone = formLong.phone.value;
-        if (phone.length < 18) {
-            formLong.phone.classList.add('red-border');
-            return false;
-        }
-        openLoader();
-        const formData = new FormData(formLong);
-        fetch(formLong.action, { method: 'POST', body: formData })
-            .then(response => {
-                closeLoader();
-                if (response.status == 200) {
-                    sendSuccesed(popupLong);
-                } else {
-                    sendFailed(response.statusText, popupLong);
-                }
-            })
-            .catch(error => {
-                sendFailed(error, popupLong);
-            });
-    });
+    submitHandler(formShort, popupShort);
+    submitHandler(formLong, popupLong);
 
     //Обработка успешной отправки
     const sendSuccesed = (popup) => {
@@ -248,4 +207,13 @@ $(document).ready(function(){
         },2000)
     }
 
+});
+
+window.addEventListener('load', () => {
+    
+    //Разлет тегов
+    const titleFlies = document.querySelectorAll('.title__fly');
+    for (const fly of titleFlies){
+        fly.classList.remove('title__fly_initial')
+    }
 });

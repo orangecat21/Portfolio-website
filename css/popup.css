@@ -54,9 +54,9 @@
 
     text-align: center;
 
-    overflow: scroll;
-
     transition: 0.5s;
+
+    overflow: hidden;
 }
 
 .popup_short {
@@ -112,10 +112,12 @@
     margin-bottom: 3vh;
 
     transition: .2s;
+
+    outline: none;
 }
 
 .popup__input:focus {
-    box-shadow: 0 0 10px 1px #ff2d5e;
+    box-shadow: 0 0 6px 3px #ff2d5e;
 }
 
 .popup__input_area {
@@ -150,6 +152,8 @@
     justify-content: center;
 
     cursor: pointer;
+
+    outline: none;
 }
 
 .popup__cross,
